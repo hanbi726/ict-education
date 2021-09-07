@@ -102,20 +102,15 @@ int count = 0;
 
 11.아래를 프로그래밍 하시오.***
 영희가 은행에 500원 (원금)을 입금했다. 하루에 1원씩 이자가 붙는다. 5일 후(일수) 잔액은 얼마가 되어 있을까? 505원
-//public class Hello {
-	public static void main(String[] args) {
-		
-		int balance = 500;
-		int day =1;
-		
-		for(day=1; day<=5; day++) {
-			balance = balance + 1;
-		}
-		System.out.println("day"+day+ "은 " + balance);
-	}	
- }
 
-
+int balance = 500;
+int day = 1;
+		
+	for(day = 1; day <= 5; day++) {
+		balance += 1;
+	}
+		System.out.println(balance);
+		
 
 12.구구단을 찍으시오.
 
