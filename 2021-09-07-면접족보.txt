@@ -108,7 +108,20 @@ public class Hello {
 
 12.구구단을 찍으시오.
 
+for(int i = 2; i <= 9; i++) {
+	for(int j = 1; j <= 9; j++) {
+		System.out.println(i + " * " + j + " = " + (i*j));
+
+
 13.짝수단을 찍으시오.
+
+for(int i = 2; i <= 9; i++) {
+  if(i%2==0)
+	for(int j = 1; j <= 9; j++) {
+				
+		System.out.println(i + " * " + j + " = " + (i*j));
+			
+
 14.결과값이 홀수 인 값만 찍으시오.
 15,아래의 별을 찍으시오.
 *****
