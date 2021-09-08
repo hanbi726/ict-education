@@ -1,0 +1,257 @@
+1.  함수는 어떻게 알아 볼 수 있을까? 함수인지를 어떻게 아는가?
+
+함수명 뒤엔 괄호가 있다.
+
+(선생님 답안)
+함수명(괄호){중괄호} //함수 정의
+함수명(괄호);      //함수 호출
+
+
+2. 함수는 어떻게 만들까?
+
+class HelloWorld { (class의 안쪽에 생성)
+    // 메소드 생성: 리턴타입, 이름, 전달인자, 블럭의 내용을 정의
+    public static TYPE NAME(PARAMETERS) {
+        ...
+    }
+}
+
+3. 함수는 어떻게 써먹을까?(함수 호출) 
+
+함수명(괄호);      //함수 호출
+
+class HelloWorld {
+    // 정의된 메소드.
+    public static TYPE NAME() {
+        ...
+    }
+    // main 메쏘드: 프로그램 실행의 시작점
+    public static void main(String[] args) {
+      NAME(); // 메쏘드 호출(실행).
+    }
+}
+
+
+4.아래를 함수로 만들어라
+printStar(1);
+printStar(2);
+printStar(3);
+
+*
+
+*
+**
+
+*
+**
+***
+
+public class MethodQuiz1 {
+
+    public static void main(String[] args) {
+	printStar(1);
+	System.out.println();
+	printStar(2);
+	System.out.println();
+	printStar(3);
+} 
+
+    public static void printStar(int star) {
+		
+	for(int i = 1; i <= star; i++) {
+		for(int j = 1; j <= i; j++) {
+		System.out.print("*");
+	}
+		System.out.println("");
+}
+}
+}
+
+
+4-1. 아래를 함수로 만들어라
+printStar(5);
+printStar(4);
+printStar(3);
+
+
+*****
+****
+***
+**
+*
+
+****
+***
+**
+*
+
+***
+**
+*
+
+public class MethodQuiz01 {
+
+   public static void main(String[] args) {
+	printStar(5);
+	System.out.println();
+	printStar(4);
+	System.out.println();
+	printStar(3);
+} 
+
+   public static void printStar(int star) {
+		
+	for(int i = 1; i <= star; i++) {
+		for(int j = star; j >= i; j--) {
+		System.out.print("*");
+	}
+		System.out.println("");
+}
+	}
+
+}
+
+
+
+
+5 아래의 함수를 만들고, 해당 함수를 호출하여 확인 하시오.
+
+함수이름: getGrade( 90 .4)
+
+출력
+90.4 수 입니다.
+
+public class MethodQuiz3 {
+
+   public static void main(String[] args) {
+	getGrade(90.4);
+}
+   public static void getGrade(double grade) {
+	if(grade>90) {
+		System.out.println(grade + " 수 입니다.");
+	}else if(grade>80) {
+		System.out.println(grade + " 우 입니다.");
+	}else if(grade>70) {
+		System.out.println(grade + " 미 입니다.");
+	}else if(grade>60) {
+		System.out.println(grade + " 양 입니다.");
+	}else {
+		System.out.println(grade + " 가 입니다.");
+	}
+}
+}
+90.4 수 입니다.
+
+
+
+6. 아래의 함수를 만드시오.
+
+
+printGugudan(5); // 1단 부터 5단 까지 출력
+printGugudan(9); // 1단 부터 9단 까지 출력
+
+public class MethodQuiz4 {
+
+	public static void main(String[] args) {
+		printGugudan(5); //1-5단까지 출력
+		printGugudan(9); //1-9단까지 출력
+	}
+	public static void printGugudan(int dan) {
+		for(int i = 1; i <= dan; i++) {
+			for(int j = 1; j <= 10; j++) {
+				System.out.println(i + "*" + j + "=" + (i*j));
+			}
+	}
+}
+}
+
+
+7. 아래의 함수를 만드시오. (int형?)
+
+printGugudan(1, 100); // 1부터 100까지의 합
+printGugudan(3, 1000); // 3부터 1000까지의 합
+-만약 
+-printGugudan(1000, 3); 처럼 위치가 바뀌어도  3부터 1000까지의 합으로 출력 할것
+
+public class MethodQuiz5 {
+
+	public static void main(String[] args) {
+		printSum(1,100);
+		printSum(100,1);
+	}
+	public static void printSum(int first,int second) {
+		int total = 0;
+		if(first < second) {
+			for(first = first; first <= second; first++) {
+				total += first;
+			}
+		} else {
+			for(second = second; second <= first; second++) {
+				total += second;
+			}
+		}
+		System.out.println(total);
+
+
+8. 아래의 함수를 만드시오.
+
+getCircleArea(10);   
+출력 - 원의 넓이는 314 입니다. 
+
+public class MethodQuiz {
+
+	public static void main(String[] args) {
+		getCircleArea(10);
+	}
+	public static void getCircleArea(int r) {
+		double result;
+		result = r*r*3.14;
+		System.out.println("원의 넓이는 "+result+" 입니다." );
+
+
+	
+9. 파라미터 두개를 받아 사각형의 넓이를 구하는 함수를 만드시오. -함수 이름 파라미터 이름 등은 개발자가 정할것
+
+public class MethodQuiz6 {
+
+	public static void main(String[] args) {
+		quadrangle(20,45);
+	}
+	public static void quadrangle(int length, width) {
+		int area = length*width;
+		System.out.println("사각형의 넓이: " + area);
+
+9-1. 파라미터 두개를 받아 삼각형의 넓이를 구하는 함수를 만드시오. -함수 이름 파라미터 이름 등은 개발자가 정할것
+
+public static void main(String[] args) {
+		triangle(6,8);
+	}
+	public static void triangle(int num1,int num2) {
+		int area = num1*num2/2;
+		System.out.println("삼각형의 넓이: " + area);
+
+
+10.아래의 별을 찍으시오.(함수 안써도 됨) 함수 상관없음 //모르겠음
+     *
+    ***
+   *****
+  *******
+ public static void printStar(int n) {
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n-1-i; j++) {
+				System.out.print(" ");
+			}
+			
+			for(int j=0; j<i*2+1; j++) {
+				System.out.print("*");
+			}
+			
+			
+			System.out.println();
+		}
+		
+	}
+
+
+
+11. 왜 함수를 만들어 사용하는지에 대하여 설명하시오.
