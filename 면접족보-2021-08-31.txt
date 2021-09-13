@@ -1,0 +1,27 @@
+1. 프로그래밍
+
+출력
+Hello World
+I am a preogramer.
+
+public static void main(String[] args){
+ System.out.println("Hello World")
+ System.out.println("I am a programer.")
+}
+
+
+2. 하드웨어에 대해 설명하시오
+-CPU (중앙처리장치)
+프로그램 명령어를 해석하고 데어터를 연산/처리해주는 내장칩
+
+-메모리 (주기억장치)
+명령어와 데이터를 전자적인 방법으로 저장하는 장소
+
+-CPU가 2진수만 알아듣는 이유 ??
+컴퓨터가 의미를 구분할 수 있는 최소단위가 ON/OFF 이기 때문에 2진수를 사용
+
+3. OS의 역할 그리고 종류에 대해 설명하시오
+(운영체제) 컴퓨터 자원을 효율적으로 관리하기 위한 시스템
+임베디드, 서버, 모바일, 데스크탑
+
+
