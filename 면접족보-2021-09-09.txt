@@ -1,0 +1,324 @@
+아래의 함수를 만들고, 해당 함수를 호출하여 확인 하시오.
+
+함수이름: getGrade
+1.매개변수: double type 1개
+리턴타입: 수 우 미 양 가 중 하나의 char 타입
+
+public class Quiz011 {
+
+	public static void main(String[] args) {
+		int kor = 90;
+		int eng = 80;
+		int mat = 70;
+		int sum = kor+eng+mat;
+		
+		double avg = sum /3.0;
+		char grade = getGrade(avg);
+		System.out.println(grade+"입니다.");
+	}
+	public static char getGrade(double avg) {
+		char grade;
+		
+		if(avg>90) {
+			grade = '수';
+		}else if(avg>80) {
+			grade = '우';
+		}else if(avg>70) {
+			grade = '미';
+		}else if(avg>60) {
+			grade = '양';
+		}else {
+			grade = '가';
+		}
+			
+		return grade;
+	}
+}
+
+
+2.매개변수 하나를 받아 
+원의 넓이를 리턴하는 함수를 작성하시오.
+
+public class Quiz011 {
+
+	public static void main(String[] args) {
+		double r = 5.5;
+		double area = getCircleArea(r);
+		
+		System.out.println("원의 넓이는: "+ area);	
+	}
+	public static double getCircleArea(double r) {
+		
+		return r*r*3.14;
+	}
+	
+}
+
+3.매개변수 두 개를 받아, 사각형의 넓이를 리턴하는 함수를 
+작성하시오.
+
+public class Quiz011 {
+
+	public static void main(String[] args) {
+		double width = 30;
+		double height = 20;
+		
+		System.out.println(getRectangleArea(width,height));
+	}
+	public static double getRectangleArea(double width, double height ) {
+		return width*height;
+	}
+}
+
+
+4.매개변수 1000을 넣으면 1부터 1000 까지의 합 리턴
+
+public class Quiz04 {
+
+	public static void main(String[] args) {
+		int total = getIncrease(1000);
+		
+		System.out.println("합: "+ total);
+	}
+	public static int getIncrease(int num) {
+		int sum = 0;
+		for(int i = 1; i <= num; i++) {
+			sum += i;
+		}
+		return sum;
+	}
+}
+
+5.매개변수 int 로 3개 받아서 최대값 리턴
+//삼항연산자
+public class Practice {
+
+	public static void main(String[] args) {
+		
+		System.out.println(getmax(90,35,70));
+	}
+	public static int getmax(int n1, int n2, int n3) {
+		
+	    return (n1>n2)? ((n1>n3)?n1:n3): ((n2>n3)?n2:n3);
+	}
+}
+
+//if문
+public static void main(String[] args) {
+		int max = getMax(89,5,7);
+		System.out.println(max);
+	}
+	public static int getMax(int n1,int n2,int n3) {
+		
+		int max = 0;
+		
+		if((n1>n2)&&(n1>n3)) {
+			max = n1;
+		}else if((n2>n1)&&(n2>n3)) {
+			max = n2;
+		}else {
+			max = n3;
+		}
+		return max;
+	}
+	
+}
+
+6. 아래가 의도하지 않은 결과를 나타내는 이유를 설명하시오.
+
+char ch = '가';
+System.out.println(ch + '\n'); //44042 라는 int 정수값 출력됨( int로..?)
+
+// 의도를 표현하기 위한 방법
+System.out.println(ch + "\n"); //가 출력됨
+
+->ch도 char, '\n'eh char 
+char+char 연산은 int로 자동형변환됨
+그러므로 각각의 문자가 가진 숫자값(아스키코드)으로 연산하여 44042 출력.
+
+
+7. 변수의 scope 는?
+->
+- 변수는 변수가 선언된 시점부터 그 중괄호 블럭 안에서 사용 가능하다.
+- 클래스 밖에서 변수 선언은 불가능함
+- 같은 영역 내에서 동일 이름의 변수 선언 불가
+
+8. 펙토리얼을 구하는 재귀 함수를 만드시오.
+
+public static void main(String[] args) {
+		
+		System.out.println("3 factorial: "+ factorial(3));
+		System.out.println("7 factorial: "+ factorial(7));
+	}
+	public static int factorial(int n){
+		if(n==1) {
+			return 1;
+		}else {
+			return n * factorial(n-1);
+		}
+	}
+}
+
+
+9.아래를 함수로 만들어 찍으시오.
+printStar(5)
+
+    *
+   ***
+  *****
+ *******
+*********
+
+public static void main(String[] args) {
+		printstar(5);
+	}
+	public static void printstar(int n) {
+		for(int i =1; i <= 5; i++) {
+			for(int j = 5; j>i; j--) {
+				System.out.print(" ");
+			}
+			for(int j = 1; j<=i; j++) {
+				System.out.print("*");
+			}
+			for(int j = 1;j<i;j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+10.객체란 무엇인가? 예습
+->객체는 변수, 데이터 구조, 함수, 메서드가 될 수 있으며 식별자가 참조하는 메모리의 값이다. (?)
+
+
+11. 아래를 함수로 만들어시오. 
+getCurrentPaper(126500)
+
+출력:
+오만원 : 2장	
+만원:    2장
+오천원 :1장
+천원: 1
+오백원: 1개
+백원: 0개
+public static void main(String args[]) {
+		getCurrentPaper(126500);
+		
+	}
+	
+	public static void getCurrentPaper(int n) {
+		int share;
+		
+		share = n / 50000;
+		n = n % 50000;
+		System.out.println("오만원: " + share + "장");
+		
+		share = n / 10000;
+		n = n % 10000;
+		System.out.println("만원: " + share + "장");
+		
+		share = n / 5000;
+		n = n % 5000;
+		System.out.println("오천원: " + share + "장");
+		
+		share = n / 1000;
+		n = n % 1000;
+		System.out.println("천원: " + share + "장");
+		
+		share = n / 500;
+		n = n % 500;
+		System.out.println("오백원: " + share + "개");
+		
+		share = n / 100;
+		n = n % 100;
+		System.out.println("백원: " + share + "개");
+		
+	}
+
+
+**다른 답
+public static void main(String[] args) {
+		money(126500);
+	}
+	public static void money(int m) {
+		System.out.println("오만원"+(m/50000));
+		System.out.println("만원"+(m%50000)/10000);
+		System.out.println("오천원"+ (m%10000)/5000);
+		System.out.println("천원"+ (m%5000)/1000);
+		System.out.println("오백원" + (m%1000)/500);
+		System.out.println("백원" + (m%500)/100);
+	}
+	}
+
+
+12. 클래스명은 자유롭게 작성하시면 되고
+다음과 같은 함수를 만들겁니다.
+
+세 자리의 자연수를 곱하는 과정을 보여주는 함수 "myMultiply"
+
+세 자리의 자연수의 곱은 다음과 같이 이루어집니다. 출력값은 계산과정들을 출력합니다.
+     352
+×  373
+---------
+   1056 ---일의자리 출력
+  2464  ---십의자리 출력
+1056   ---백의자리 출력
+----------
+131296 ---최종결과 출력
+
+
+호출방식은 다음과 같습니다.
+myMultiply(264,317);
+
+실행결과는 다음과 같습니다.
+1848
+264
+792
+83688
+
+
+13.아래의 함수를 만드시오. //정답 28?
+
+파라미터로 1000을 넣으면 1부터 1000까지의
+숫자중 5의 배수이자 7의 배수인 수를 카운트 하여 리턴
+
+public static void main(String[] args) {
+		System.out.println("개수는 "+ total(1000));
+	}
+	public static int total(int num) {
+		int count = 0;
+		for(int i=1; i<num; i++) {
+			if((i%5==0) && (i%7==0)) {
+				count++;
+			}
+		}
+		return count;
+	}
+}
+
+14.아래의 함수를 만드시오.
+
+getGugudan(3) // 3단 출력
+getGugudan(5) // 5단 출력
+getGugudan(6) // 6단 출력
+getGugudan(7) // 7단 출력
+
+public static void main(String[] args) {
+		System.out.println(getGugudan(3));
+		System.out.println(getGugudan(5));
+		System.out.println(getGugudan(6));
+		System.out.println(getGugudan(7));
+		
+	}
+	public static int getGugudan(int num) {
+		for(int i = num; i<=num; i++) {
+			for(int j = 1; j<=9; j++) {
+				System.out.println(i + " * " + j + " = " + (i*j));
+			}
+		}
+		return num;
+	}
+}
+
